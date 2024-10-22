@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Website</title>
+  <style>
+  body{
+    font-family:Arial;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    background-color:#e4bc84;
+  }
+  header{
+    background-color:#6F4E37;
+    color: white;
+    text-align: center;
+    padding:0;
+    width: 100%;
+    height: 150px;
+    position:fixed;
+  }
+  .logo{
+    float:right;
+    margin-left:1rem;
+    height:100px;
+    width:100px;
+  }
+  @media (min-width: 768px) {
+  .logo {
+    width: 150px; /* Adjust the size for desktop */
+    height: 150px;
+  }
+}
+  nav {
+     display: inline-block;
+     vertical-align: middle;
+     margin-left:0%;
+    margin-right:0%;
+     margin-top:15%;
+     border:3px brown solid;
+    width:100%;
+ }
+  nav ul{
+    margin- top:0;
+    padding:0;
+    display:inline-block;
+}
+  nav ul li {
+     display: inline-block;
+     position: relative;
+     margin-right: 0px;
+     margin-bottom:0;
+     width:200px;
+}
+  nav ul li a {
+      color: white;
+       text-decoration: none;
+       font-weight: bold;
+       width:60px;
+}
+  nav ul li select {
+       top: 100%;
+       left: 0;
+       width: 100%;
+}
+  .sidebar {
+       width: 250px;
+       background-color: #A47F66;
+       position: fixed;
+       top: 0;
+       left: -200px;
+       height: 100%;
+       transition: left 0.3s;
+       padding-top: 60px;
+}
+.sidebar.active {
+        left: 0;
+}
+.sidebar form {
+         padding: 30px;
+         color: white;
+ }
+.sidebar form input[type="text"], .sidebar form input[type="email"], .sidebar form input[type="password"] {
+         width: 90%;
+         padding: 20px;
+         margin-bottom: 10px;
+         border: none;
+         border-radius: 5px;
+         padding-left:0;
+ }
+ .sidebar {
+         width: 200px;
+ }
+ .menu-button {
+         position: fixed;
+         top: 0;
+         left: 5px;
+         background-color: #A47F66;
+         color: white;
+         padding: 5px;
+         border: none;
+         cursor: pointer;
+         font-size: 18px;
+         z-index: 100;
+}
+footer {
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+         background-color:#6F4E37;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        height: 60px;
+}
+.content {
+        padding: 20px 20px;
+        margin-left: 20px;
+        font-size:24px;
+        line-height:1.8;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="coffee.jpg" alt="Logo" class="logo" width="100" height="100">
+    <h1>Welcome to Coffruity</h1>
+    <p>A sip full of surprises.</p>
+  </header>
+  <nav>
+    <ul>
+      <li>  <a href="#home"></a>
+        <select>
+          <option selected>Home</option>
+          <option>Welcome Message</option>
+          <option>Customer Reviews</option>
+        </select>
+      </li>
+      <li> <a href="#services"></a>
+        <select>
+          <option selected>Services</option>
+          <option>Menu</option>
+          <option>Catering</option>
+        </select>
+      </li>
+      <li> <a href="#contacts"></a>
+        <select>
+          <option selected>Contacts</option>
+          <option>Contact Form</option>
+          <option>Email</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+  <div class ="sidebar" id ="sidebar">
+    <h2>Register</h2>
+    <form action="#">
+      <input type="text" name="Email" placeholder="Email"required/>
+      <input type="text" name="Password" placeholder="Password"required/>
+      <button type="submit">Register</button>
+      <button type="reset">Cancel</button>
+    </form>
+  </div>
+  
+  <button class="menu-button" onclick ="toggleSidebar()">☰ Menu</button>
+  <div class="content">
+    <pre>   
+     <strong>Welcome to Coffruity  </strong>
+      
+ Where every sip is a delightful surprise! 
+ Experience the perfect fusion of bold coffee flavors and
+ refreshing fruity notes.
+ Whether you're here for a quick pick-me-up or to relax and unwind,  
+ we have the perfect brew waiting for you. 
+ Dive into a cup full of unexpected goodness!
+
+    </pre>
+ </div>
+ <footer>
+    <p>&copy;2024 Coffruity Shop</p>
+ </footer>
+  <script>
+     function toggleSidebar(){
+       var sidebar = document.getElementById("sidebar");
+       sidebar.classList.toggle("active");
+     }
+  </script>
+</body>
+</html>
